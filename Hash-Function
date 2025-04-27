@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+
+unsigned int stringHash(const std::string& key, int tableSize) {
+    unsigned int hash = 0;
+    for (size_t i = 0; i < key.length(); ++i) {
+        hash = (hash * 31) + key[i];
+    }
+    return hash % tableSize;
+}
+
+int main() {
+    std::string word = "hello";
+    int tableSize = 100;
+    unsigned int hashValue = stringHash(word, tableSize);
+    std::cout << "The hash value for \"" << word << "\" is: " << hashValue << std::endl;
+    return 0;
+}
