@@ -1,0 +1,37 @@
+#include <iostream>
+#include <sstream>
+#include <conio.h>
+
+using namespace std;
+
+string enterpassword(){
+    string numAsString="";
+    char ch = getch();
+    while(ch != '\r'){
+        cout<<'*';
+        numAsString+=ch;
+        ch=getch();
+    }
+    return numAsString;
+}
+
+int main(){
+    string name1, password1, name2, password2;
+    cout<<"signup\n"<<endl;
+    cout<<"enter username:";
+    cin>>name1;
+    cout<<"enter password:";
+    cin>>password1;
+    cout<<"login\n"<<endl;
+    cout<<"enter username:";
+    cin>>name2;
+    cout<<"enter password:";
+    password2=enterpassword();
+    if((name1==name2)&&(password1==password2)){
+        cout<<"\ncorrect credentials";
+    }
+    else{
+        cout<<"\nwrong credentials";
+    }
+    return 0;
+}
