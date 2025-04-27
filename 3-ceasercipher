@@ -1,0 +1,45 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    int i, j, k;
+    string p, t;
+    int key;
+    cout<<"enter the key:";
+    cin>>key;
+    cout<<"enter the msg to decrypt:";
+    cin>>p;
+    for(i=0; i<p.size(); i++){
+        t+=(p[i]-'A'-key+26)%26+'A';
+    }
+    cout<<"decrypted msg is:"<<t;
+    return 0;
+}
+
+
+
+
+
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    int i,j,k;
+    string p,t;
+    int key;
+    cout<<"enter the key:";
+    cin>>key;
+    cout<<"enter the msg to encrypt:";
+    cin>>p;
+    for(i=0;i<p.size();i++){
+        t+=(p[i]-'A'+key)%26+'A';
+    }
+    cout<<"encrypted msg is:"<<t;
+    return 0;
+}
+
